@@ -1,0 +1,3 @@
+INDEX VERSION 1.126+/home/lars/workspace/GdP2/Uebungen/.metadata/.plugins/org.eclipse.jdt.core
+1514218975.index
+4267884898.index
