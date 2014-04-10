@@ -94,3 +94,4 @@ java.lang.NullPointerException: null
 	at org.eclipse.recommenders.internal.rcp.providers.ClasspathEntryInfoProvider.access$0(ClasspathEntryInfoProvider.java:111) [org.eclipse.recommenders.rcp_1.0.0.v20120914-1432-b175.jar:na]
 	at org.eclipse.recommenders.internal.rcp.providers.ClasspathEntryInfoProvider$1.run(ClasspathEntryInfoProvider.java:104) [org.eclipse.recommenders.rcp_1.0.0.v20120914-1432-b175.jar:na]
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53) [org.eclipse.core.jobs_3.5.300.v20120622-204750.jar:na]
+2014-04-10 16:33:46,146 [main] INFO  c.n.h.c.p.n.NettyAsyncHttpProvider - Number of application's worked threads is 2
