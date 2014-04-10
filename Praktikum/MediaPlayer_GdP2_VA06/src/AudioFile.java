@@ -3,11 +3,31 @@ public class AudioFile {
 	// attributes
 	String pathname;
 	String filename;
+	String author;
+	String title;
 
-	// constructors
+	// constructor 1
 	public AudioFile() {
 		pathname = "";
 		filename = "";
+		author = "";
+		title = "";
+		
+	}
+		
+	// constructor 2
+	public AudioFile(String file){
+		pathname = "";
+		filename = "";
+		author = "";
+		title = "";
+		
+		
+		parsePathname(file);
+		parseFilename(this.filename);
+		getFilename();
+		
+		
 	}
 
 	// getters
@@ -20,19 +40,25 @@ public class AudioFile {
 		return filename;
 	}
 
-	public void parseFilename(String filename) {
-
-	}
-
 	public String getAuthor() {
-		return "";
+		return author;
 	}
 
 	public String getTitle() {
-		return "";
+		return title;
 	}
 
 	// public methods
+	
+	public String toString(){
+		if(getAuthor().isEmpty()){
+			return title;
+		}
+		else{
+			return author + " - " + title;
+		}
+	}
+	
 	// parsePathname
 	public void parsePathname(String pathName) {
 		// Ueberpruefung pathname != leer
@@ -89,9 +115,35 @@ public class AudioFile {
 	} // parsePathname end
 
 	// parseFilename
-	public void test_parseFilename(String filename) {
+	public void parseFilename(String fileName) {
+		// abbruchbedingungen
+		if(fileName.lastIndexOf(".") == 0) 
+			return;
+	    
+		if(fileName.contains(".")){
+			fileName  = fileName.substring(0, fileName.lastIndexOf("."));
+					
+		}
 		
-
-	}
+		// unterscheide Author/Title
+		if(fileName.contains(" - ")){
+			author = fileName.substring(0, fileName.lastIndexOf(" - ")).trim();
+			title  = fileName.substring(fileName.lastIndexOf(" - ")+3).trim();		
+		
+		if(fileName.contains(".")){
+			fileName = fileName.substring(0, fileName.lastIndexOf("."));
+			
+		}
+		
+		
+		}else{ 
+			author = "";
+			title = fileName.trim();			
+		}
+		
+		
+		
+	} // parseFilename end
+	
 
 } // AudioFile end

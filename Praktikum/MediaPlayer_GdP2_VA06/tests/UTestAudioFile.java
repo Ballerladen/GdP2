@@ -75,7 +75,7 @@ public class UTestAudioFile {
 		af.parseFilename(af.getFilename());
 
 		assertEquals("Filename stored incorrectly",
-				"  Falco  -  Rock me    Amadeus  .mp3", af.getFilename());
+				" Falco  -  Rock me    Amadeus .mp3  ", af.getFilename());
 		assertEquals("Author stored incorrectly", "Falco", af.getAuthor());
 		assertEquals("Title  stored incorrectly", "Rock me    Amadeus",
 				af.getTitle());
