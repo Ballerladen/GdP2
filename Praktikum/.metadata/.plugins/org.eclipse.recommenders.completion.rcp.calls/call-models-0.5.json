@@ -1,0 +1,12 @@
+{
+  "/usr/lib/jvm/java-7-oracle/jre/lib/rt.jar": {
+    "location": "/usr/lib/jvm/java-7-oracle/jre/lib/rt.jar",
+    "status": "UNRESOLVED",
+    "error": "No call model found for \u0027/usr/lib/jvm/java-7-oracle/jre/lib/rt.jar\u0027. Neither fingerprint \u002741c6eef0644c6286fe527ef5efd0d61ce867a278\u0027 nor symbolic name \u0027jre\u0027 are known."
+  },
+  "/home/lars/workspace/GdP2/Praktikum/MediaPlayer_GdP2_VA07/src": {
+    "location": "/home/lars/workspace/GdP2/Praktikum/MediaPlayer_GdP2_VA07/src",
+    "status": "UNRESOLVED",
+    "error": "No class path info available for \u0027/home/lars/workspace/GdP2/Praktikum/MediaPlayer_GdP2_VA07/src\u0027. Skipped."
+  }
+}

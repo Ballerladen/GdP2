@@ -1,0 +1,34 @@
+public class TaggedFile {
+
+	// constructor
+	public TaggedFile() {
+		super();
+	}
+
+	public TaggedFile(String s) {
+		super();
+
+	}
+
+	// getters
+	public void play() {
+
+	}
+
+	public void togglePause() {
+
+	}
+
+	public void stop() {
+
+	}
+
+	public String getFormattedDuration() {
+		return "";
+	}
+
+	public String getFormattedPosition() {
+		return "";
+	}
+
+}
