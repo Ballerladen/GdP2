@@ -143,17 +143,17 @@
     "javaRuntime": true
   },
   {
-    "symbolicName": "tritonus_share",
+    "symbolicName": "jre",
     "version": {
-      "major": -1,
-      "minor": -1,
-      "micro": -1,
+      "major": 1,
+      "minor": 0,
+      "micro": 0,
       "qualifier": ""
     },
-    "jarFileFingerprint": "2d30f1554a0a0cc8b580e18399b5d1121c7db383",
-    "jarFileModificationDate": "2012-02-13T14:11:52+01:00",
-    "location": "/home/lars/workspace/GdP2/Praktikum/MediaPlayer_GdP2_VA07/lib/tritonus_share.jar",
-    "javaRuntime": false
+    "jarFileFingerprint": "95dc9053062d68cde4e8c38494cc63aefd7b0a42",
+    "jarFileModificationDate": "2014-01-20T13:46:19+01:00",
+    "location": "/usr/lib/jvm/java-7-oracle/jre/lib/ext/sunec.jar",
+    "javaRuntime": true
   },
   {
     "symbolicName": "jre",
@@ -169,17 +169,17 @@
     "javaRuntime": true
   },
   {
-    "symbolicName": "jre",
+    "symbolicName": "tritonus_share",
     "version": {
-      "major": 1,
-      "minor": 0,
-      "micro": 0,
+      "major": -1,
+      "minor": -1,
+      "micro": -1,
       "qualifier": ""
     },
-    "jarFileFingerprint": "95dc9053062d68cde4e8c38494cc63aefd7b0a42",
-    "jarFileModificationDate": "2014-01-20T13:46:19+01:00",
-    "location": "/usr/lib/jvm/java-7-oracle/jre/lib/ext/sunec.jar",
-    "javaRuntime": true
+    "jarFileFingerprint": "2d30f1554a0a0cc8b580e18399b5d1121c7db383",
+    "jarFileModificationDate": "2012-02-13T14:11:52+01:00",
+    "location": "/home/lars/workspace/GdP2/Praktikum/MediaPlayer_GdP2_VA07/lib/tritonus_share.jar",
+    "javaRuntime": false
   },
   {
     "symbolicName": "jre",
@@ -221,17 +221,17 @@
     "javaRuntime": true
   },
   {
-    "symbolicName": "vorbisspi1.0.2",
+    "symbolicName": "jre",
     "version": {
-      "major": -1,
-      "minor": -1,
-      "micro": -1,
+      "major": 1,
+      "minor": 0,
+      "micro": 0,
       "qualifier": ""
     },
-    "jarFileFingerprint": "69800ea7dd35891e00ee02d6989a526dd097b1d8",
-    "jarFileModificationDate": "2012-02-13T14:11:52+01:00",
-    "location": "/home/lars/workspace/GdP2/Praktikum/MediaPlayer_GdP2_VA07/lib/vorbisspi1.0.2.jar",
-    "javaRuntime": false
+    "jarFileFingerprint": "1d6a39dc68525c02cdecbad7eb4c3b5300a53a87",
+    "jarFileModificationDate": "2014-01-20T13:46:19+01:00",
+    "location": "/usr/lib/jvm/java-7-oracle/jre/lib/ext/zipfs.jar",
+    "javaRuntime": true
   },
   {
     "symbolicName": "jorbis-0.0.15",
@@ -247,17 +247,17 @@
     "javaRuntime": false
   },
   {
-    "symbolicName": "jre",
+    "symbolicName": "vorbisspi1.0.2",
     "version": {
-      "major": 1,
-      "minor": 0,
-      "micro": 0,
+      "major": -1,
+      "minor": -1,
+      "micro": -1,
       "qualifier": ""
     },
-    "jarFileFingerprint": "1d6a39dc68525c02cdecbad7eb4c3b5300a53a87",
-    "jarFileModificationDate": "2014-01-20T13:46:19+01:00",
-    "location": "/usr/lib/jvm/java-7-oracle/jre/lib/ext/zipfs.jar",
-    "javaRuntime": true
+    "jarFileFingerprint": "69800ea7dd35891e00ee02d6989a526dd097b1d8",
+    "jarFileModificationDate": "2012-02-13T14:11:52+01:00",
+    "location": "/home/lars/workspace/GdP2/Praktikum/MediaPlayer_GdP2_VA07/lib/vorbisspi1.0.2.jar",
+    "javaRuntime": false
   },
   {
     "symbolicName": "jre",

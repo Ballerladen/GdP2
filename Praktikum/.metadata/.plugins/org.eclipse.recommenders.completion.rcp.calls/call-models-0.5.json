@@ -8,5 +8,10 @@
     "location": "/home/lars/workspace/GdP2/Praktikum/MediaPlayer_GdP2_VA07/src",
     "status": "UNRESOLVED",
     "error": "No class path info available for \u0027/home/lars/workspace/GdP2/Praktikum/MediaPlayer_GdP2_VA07/src\u0027. Skipped."
+  },
+  "/home/lars/workspace/GdP2/Praktikum/MediaPlayer_GdP2_VA07/lib/studiplayer.jar": {
+    "location": "/home/lars/workspace/GdP2/Praktikum/MediaPlayer_GdP2_VA07/lib/studiplayer.jar",
+    "status": "UNRESOLVED",
+    "error": "No call model found for \u0027/home/lars/workspace/GdP2/Praktikum/MediaPlayer_GdP2_VA07/lib/studiplayer.jar\u0027. Neither fingerprint \u0027640fac8e56490da5610683c8a2116e7d2e000564\u0027 nor symbolic name \u0027studiplayer\u0027 are known."
   }
 }

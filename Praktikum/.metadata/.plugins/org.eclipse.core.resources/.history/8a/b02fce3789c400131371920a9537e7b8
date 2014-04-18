@@ -1,0 +1,51 @@
+import java.text.DecimalFormat;
+import java.text.SimpleDateFormat;
+
+public class TaggedFile extends AudioFile {
+
+	// constructor
+	public TaggedFile() {
+		super();
+	}
+
+	public TaggedFile(String s) {
+		super(s);
+
+	}
+
+	// getters
+	public void play() {
+
+	}
+
+	public void togglePause() {
+
+	}
+
+	public void stop() {
+
+	}
+
+	public String getFormattedDuration() {
+		return "";
+	}
+
+	public String getFormattedPosition() {
+		return "";
+	}
+
+	public static String timeFormatter(long microseconds) {
+		if (microseconds < 0) {
+			throw new RuntimeException("Negativ time value provided");
+		}
+		if (microseconds > 599999999L) {
+			throw new RuntimeException("Time value exceeds allowed format");
+		}
+
+		int minutes = (int) ((microseconds / 1000000) / 60);
+		int seconds = (int) ((microseconds / 1000000) % 60);
+
+		return String.format("%02d:%02d", minutes, seconds);
+	}
+
+}

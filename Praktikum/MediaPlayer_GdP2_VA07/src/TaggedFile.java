@@ -1,13 +1,16 @@
+import studiplayer.basic.TagReader;
+
 public class TaggedFile extends AudioFile {
 
 	// constructor
 	public TaggedFile() {
 		super();
+		readAndStoreTags(author);
 	}
 
 	public TaggedFile(String s) {
 		super(s);
-		
+
 	}
 
 	// getters
@@ -31,19 +34,27 @@ public class TaggedFile extends AudioFile {
 		return "";
 	}
 	
-	public static String timeFormatter(long microtime){
-		if(microtime < 0) {
-		throw new RuntimeException("Negativ time value provided");
+	public String getAlbum() {
+		return "album";
+	}
+
+	// timeFormatter
+	public static String timeFormatter(long microseconds) {
+		if (microseconds < 0) {
+			throw new RuntimeException("Negativ time value provided");
 		}
-		if(microtime > 599999999L) {
-		throw new RuntimeException("Time value exceeds allowed format");
+		if (microseconds > 599999999L) {
+			throw new RuntimeException("Time value exceeds allowed format");
 		}
-		
-	
+
+		int minutes = (int) ((microseconds / 1000000) / 60);
+		int seconds = (int) ((microseconds / 1000000) % 60);
+
+		return String.format("%02d:%02d", minutes, seconds);
 	}
 	
-	
-	
-	
+	private void readAndStoreTags(String pathname) {
+		
+	}
 
 }

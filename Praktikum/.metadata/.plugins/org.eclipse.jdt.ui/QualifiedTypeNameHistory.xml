@@ -2,4 +2,7 @@
 <qualifiedTypeNameHistroy>
 <fullyQualifiedTypeName name="studiplayer.basic.TagReader"/>
 <fullyQualifiedTypeName name="studiplayer.basic.BasicPlayer"/>
+<fullyQualifiedTypeName name="java.text.SimpleDateFormat"/>
+<fullyQualifiedTypeName name="java.text.DateFormat"/>
+<fullyQualifiedTypeName name="java.text.DecimalFormat"/>
 </qualifiedTypeNameHistroy>
