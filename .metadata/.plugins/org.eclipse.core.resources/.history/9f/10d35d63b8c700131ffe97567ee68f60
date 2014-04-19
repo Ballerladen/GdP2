@@ -1,8 +1,8 @@
 import java.util.Map;
 import studiplayer.basic.TagReader;
 
-public class TaggedFile extends SampledFile {
-
+public class TaggedFile extends AudioFile {
+	
 	// attributes
 	String album;
 	long duration;
@@ -20,8 +20,48 @@ public class TaggedFile extends SampledFile {
 
 	}
 
+	// getters
+	public void play() {
+
+	}
+
+	public void togglePause() {
+
+	}
+
+	public void stop() {
+
+	}
+
+	public String getFormattedDuration() {
+		return "";
+	}
+
+	public String getFormattedPosition() {
+		return "";
+	}
+
+	public String getAlbum() {
+		return album;
+	}
+
+	// timeFormatter
+	public static String timeFormatter(long microseconds) {
+		if (microseconds < 0) {
+			throw new RuntimeException("Negativ time value provided");
+		}
+		if (microseconds > 599999999L) {
+			throw new RuntimeException("Time value exceeds allowed format");
+		}
+
+		int minutes = (int) ((microseconds / 1000000) / 60);
+		int seconds = (int) ((microseconds / 1000000) % 60);
+
+		return String.format("%02d:%02d", minutes, seconds);
+	}
+
 	// readAndStoreTags
-	public void readAndStoreTags(String pathname) {
+	private void readAndStoreTags(String pathname) {
 		Map<String, Object> tag_map = TagReader.readTags(pathname);
 		for (String key : tag_map.keySet()) {
 			// check key first
@@ -46,19 +86,10 @@ public class TaggedFile extends SampledFile {
 			}
 
 			if (key.equals("duration")) {
-				duration = Long.parseLong(key.trim());
+
 			}
 		}
 
-	}
-
-	// toString
-	public String toString() {
-		if (getFormattedDuration().isEmpty()) {
-			return super.toString() + " - " + duration;
-		} else {
-			return super.toString() + " - " + album + " - " + duration;
-		}
 	}
 
 } // public class TaggedFile end

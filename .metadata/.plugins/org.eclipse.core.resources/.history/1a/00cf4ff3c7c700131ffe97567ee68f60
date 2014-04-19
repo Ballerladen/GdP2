@@ -21,7 +21,7 @@ public class TaggedFile extends SampledFile {
 	}
 
 	// readAndStoreTags
-	public void readAndStoreTags(String pathname) {
+	private void readAndStoreTags(String pathname) {
 		Map<String, Object> tag_map = TagReader.readTags(pathname);
 		for (String key : tag_map.keySet()) {
 			// check key first

@@ -1,0 +1,95 @@
+import java.util.Map;
+import studiplayer.basic.TagReader;
+
+public class TaggedFile extends AudioFile {
+
+	// attributes
+	String album;
+	long duration;
+
+	// constructor
+	public TaggedFile() {
+		super();
+		album = "";
+		duration = 0L;
+	}
+
+	public TaggedFile(String pathname) {
+		super(pathname);
+		readAndStoreTags(getPathname());
+
+	}
+
+	// getters
+	public void play() {
+
+	}
+
+	public void togglePause() {
+
+	}
+
+	public void stop() {
+
+	}
+
+	public String getFormattedDuration() {
+		return timeFormatter(duration);
+	}
+
+	public String getFormattedPosition() {
+		return timeFormatter(studiplayer.basic.BasicPlayer.getPosition());
+	}
+
+	public String getAlbum() {
+		return album;
+	}
+
+	// timeFormatter
+	public static String timeFormatter(long microseconds) {
+		if (microseconds < 0) {
+			throw new RuntimeException("Negativ time value provided");
+		}
+		if (microseconds > 599999999L) {
+			throw new RuntimeException("Time value exceeds allowed format");
+		}
+
+		int minutes = (int) ((microseconds / 1000000) / 60);
+		int seconds = (int) ((microseconds / 1000000) % 60);
+
+		return String.format("%02d:%02d", minutes, seconds);
+	}
+
+	// readAndStoreTags
+	private void readAndStoreTags(String pathname) {
+		Map<String, Object> tag_map = TagReader.readTags(pathname);
+		for (String key : tag_map.keySet()) {
+			// check key first
+			if (key == null) {
+				continue;
+			}
+
+			if (key.trim().isEmpty())
+				continue;
+
+			// all good, now set this shit
+			if (key.equals("title")) {
+				title = key.trim();
+			}
+
+			if (key.equals("author")) {
+				author = key.trim();
+			}
+
+			if (key.equals("album")) {
+				album = key.trim();
+			}
+
+			if (key.equals("duration")) {
+				duration = Long.parseLong(key.trim());
+			}
+		}
+
+	}
+
+} // public class TaggedFile end
