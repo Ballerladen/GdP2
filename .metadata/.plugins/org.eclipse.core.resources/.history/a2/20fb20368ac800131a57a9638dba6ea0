@@ -24,10 +24,10 @@ public class TaggedFile extends SampledFile {
 	public void readAndStoreTags(String pathname) {
 		Map<String, Object> tag_map = TagReader.readTags(pathname);
 		for (String key : tag_map.keySet()) {
-
 			// check key first
-			if (key == null)
+			if (key == null) {
 				continue;
+			}
 
 			if (key.trim().isEmpty())
 				continue;
@@ -61,9 +61,4 @@ public class TaggedFile extends SampledFile {
 		}
 	}
 
-	public String[] fields() {
-		String[] fields = { author, title, album, this.getFormattedDuration() };
-
-		return fields;
-	}
 } // public class TaggedFile end

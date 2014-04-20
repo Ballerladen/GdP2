@@ -42,8 +42,7 @@ public abstract class AudioFile {
 	public abstract String getFormattedDuration();
 
 	public abstract String getFormattedPosition();
-
-	public abstract String[] fields();
+	
 
 	// getters
 	public String getPathname() {

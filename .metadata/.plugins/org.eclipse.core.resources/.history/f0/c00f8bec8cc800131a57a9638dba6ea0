@@ -30,10 +30,4 @@ public class WavFile extends SampledFile {
 	public String toString() {
 		return super.toString() + " - " + getFormattedDuration();
 	}
-
-	public String[] fields() {
-		String[] fields = { author, title, album, this.getFormattedDuration() };
-
-		return fields;
-	}
 }
