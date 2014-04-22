@@ -1,0 +1,65 @@
+import java.util.Map;
+import studiplayer.basic.TagReader;
+
+public class TaggedFile extends SampledFile {
+
+	// constructor
+	public TaggedFile() {
+		super();
+		album = "";
+		duration = 0L;
+	}
+
+	public TaggedFile(String pathname) {
+		super(pathname);
+		readAndStoreTags(getPathname());
+
+	}
+
+	// readAndStoreTags
+	public void readAndStoreTags(String pathname) {
+		Map<String, Object> tag_map = TagReader.readTags(pathname);
+		for (String key : tag_map.keySet()) {
+
+			// check key first
+			if (key == null)
+				continue;
+
+			if (key.trim().isEmpty())
+				continue;
+
+			// all good, now set this shit
+			if (key.equals("title")) {
+				title = tag_map.get(key).toString().trim();
+			}
+
+			if (key.equals("author")) {
+				author = tag_map.get(key).toString().trim();
+			}
+
+			if (key.equals("album")) {
+				album = tag_map.get(key).toString().trim();
+			}
+
+			if (key.equals("duration")) {
+				duration = Long.parseLong(tag_map.get(key).toString().trim());
+			}
+		}
+
+	}
+
+	// toString
+	public String toString() {
+		if (getFormattedDuration().isEmpty()) {
+			return super.toString() + " - " + this.getFormattedDuration();
+		} else {
+			return super.toString() + " - " + album + " - " + this.getFormattedDuration();
+		}
+	}
+
+	public String[] fields() {
+		String[] fields = { author, title, album, this.getFormattedDuration() };
+
+		return fields;
+	}
+} // public class TaggedFile end

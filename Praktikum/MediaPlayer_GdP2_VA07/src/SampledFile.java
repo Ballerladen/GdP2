@@ -1,7 +1,8 @@
+import studiplayer.basic.BasicPlayer;
+
 abstract class SampledFile extends AudioFile {
 
 	// attributes
-	String album;
 	long duration;
 
 	// constructor
@@ -18,15 +19,15 @@ abstract class SampledFile extends AudioFile {
 
 	// getters
 	public void play() {
-
+		BasicPlayer.play(this.getPathname());
 	}
 
 	public void togglePause() {
-
+		BasicPlayer.togglePause();
 	}
 
 	public void stop() {
-
+		BasicPlayer.stop();
 	}
 
 	public String getFormattedDuration() {
@@ -34,11 +35,7 @@ abstract class SampledFile extends AudioFile {
 	}
 
 	public String getFormattedPosition() {
-		return timeFormatter(studiplayer.basic.BasicPlayer.getPosition());
-	}
-
-	public String getAlbum() {
-		return album;
+		return timeFormatter(BasicPlayer.getPosition());
 	}
 
 	// timeFormatter
@@ -46,7 +43,8 @@ abstract class SampledFile extends AudioFile {
 		if (microseconds < 0) {
 			throw new RuntimeException("Negativ time value provided");
 		}
-		if (microseconds > 599999999L) {
+
+		if (microseconds > 5999999999L) {
 			throw new RuntimeException("Time value exceeds allowed format");
 		}
 

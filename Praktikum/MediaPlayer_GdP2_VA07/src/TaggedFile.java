@@ -5,19 +5,23 @@ public class TaggedFile extends SampledFile {
 
 	// attributes
 	String album;
-	long duration;
 
 	// constructor
 	public TaggedFile() {
 		super();
 		album = "";
-		duration = 0L;
 	}
 
 	public TaggedFile(String pathname) {
 		super(pathname);
+		album = "";
 		readAndStoreTags(getPathname());
 
+	}
+
+	// getter
+	public String getAlbum() {
+		return album;
 	}
 
 	// readAndStoreTags
@@ -34,19 +38,19 @@ public class TaggedFile extends SampledFile {
 
 			// all good, now set this shit
 			if (key.equals("title")) {
-				title = key.trim();
+				title = tag_map.get(key).toString().trim();
 			}
 
 			if (key.equals("author")) {
-				author = key.trim();
+				author = tag_map.get(key).toString().trim();
 			}
 
 			if (key.equals("album")) {
-				album = key.trim();
+				album = tag_map.get(key).toString().trim();
 			}
 
 			if (key.equals("duration")) {
-				duration = Long.parseLong(key.trim());
+				duration = Long.parseLong(tag_map.get(key).toString().trim());
 			}
 		}
 
@@ -55,14 +59,16 @@ public class TaggedFile extends SampledFile {
 	// toString
 	public String toString() {
 		if (getFormattedDuration().isEmpty()) {
-			return super.toString() + " - " + duration;
+			return super.toString() + " - " + this.getFormattedDuration();
 		} else {
-			return super.toString() + " - " + album + " - " + duration;
+			return super.toString() + " - " + album + " - "
+					+ this.getFormattedDuration();
 		}
 	}
 
 	public String[] fields() {
-		String[] fields = { author, title, album, this.getFormattedDuration() };
+		String[] fields = { author, title, this.getAlbum(),
+				this.getFormattedDuration() };
 
 		return fields;
 	}

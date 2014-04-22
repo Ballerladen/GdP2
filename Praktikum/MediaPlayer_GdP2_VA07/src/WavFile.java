@@ -32,7 +32,7 @@ public class WavFile extends SampledFile {
 	}
 
 	public String[] fields() {
-		String[] fields = { author, title, album, this.getFormattedDuration() };
+		String[] fields = { author, title, "", this.getFormattedDuration() };
 
 		return fields;
 	}
