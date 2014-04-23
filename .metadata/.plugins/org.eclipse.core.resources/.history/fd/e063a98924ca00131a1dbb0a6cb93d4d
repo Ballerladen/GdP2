@@ -1,0 +1,33 @@
+import java.util.LinkedList;
+
+@SuppressWarnings("serial")
+public class PlayList extends LinkedList<AudioFile> {
+
+	// attributes
+	int current;
+
+	// constructor
+	public PlayList() {
+		current = 0;
+	}
+
+	// getters
+	public int getCurrent() {
+		return current;
+
+	}
+
+	public void setCurrent(int current) {
+
+	}
+
+	public AudioFile getCurrentAudioFile() {
+		if (this.getCurrent() < this.size() && this.getCurrent() >= 0) {
+			// element exists
+			return this.get(getCurrent());
+		} else {
+			return null;
+		}
+	}
+
+} // PlayList end

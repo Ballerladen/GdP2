@@ -1,0 +1,57 @@
+import studiplayer.basic.BasicPlayer;
+
+abstract class SampledFile extends AudioFile {
+
+	// attributes
+	long duration;
+
+	// constructor
+
+	public SampledFile() {
+		super();
+		duration = 0L;
+	}
+
+	public SampledFile(String s) {
+		super(s);
+		duration = 0L;
+	}
+
+	// getters
+	public void play() {
+		BasicPlayer.play(this.getPathname());
+	}
+
+	public void togglePause() {
+		BasicPlayer.togglePause();
+	}
+
+	public void stop() {
+		BasicPlayer.stop();
+	}
+
+	public String getFormattedDuration() {
+		return timeFormatter(duration);
+	}
+
+	public String getFormattedPosition() {
+		return timeFormatter(BasicPlayer.getPosition());
+	}
+
+	// timeFormatter
+	public static String timeFormatter(long microseconds) {
+		if (microseconds < 0) {
+			throw new RuntimeException("Negativ time value provided");
+		}
+
+		if (microseconds > 5999999999L) {
+			throw new RuntimeException("Time value exceeds allowed format");
+		}
+
+		int minutes = (int) ((microseconds / 1000000) / 60);
+		int seconds = (int) ((microseconds / 1000000) % 60);
+
+		return String.format("%02d:%02d", minutes, seconds);
+	}
+
+} // SampledFile end
