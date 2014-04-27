@@ -1,0 +1,52 @@
+import org.junit.Test;
+
+	public class UTestPlayList {
+		@Test
+		public void test_getCurrentAudioFile_01() throws Exception {
+			PlayList pl = new PlayList();
+			asserEquals("Wrong current AudioFile", null, pl.getCurrentAudioFile());
+		}
+		
+		@Test
+		public void test_getCurrentAudioFile_02() throws Exception {
+			PlayList pl = new PlayList();
+			TaggedFile tf0 = new TaggedFile("audiofiles/Eisbach Deep Snow.ogg");
+			pl.add(tf0);
+			pl.setCurrent(10); // Wrong index; however, the setter is not checked
+							   // However, getcurrentAudioFile() is checked
+			assertEquals("Wrong current AudioFile", null, pl.getCurrentAudioFile());
+		}
+		
+		@Test
+		public void test_getCurrentAudioFile_04() throws Exception {
+			PlayList pl = new PlayList();
+			TaggedFile tf0 = new TaggedFile("audiofiles/Eisbach Deep Snow.ogg");
+			TaggedFile tf1 = new TaggedFile("audiofiles/Rock 812.mp3");
+			pl.add(tf0);
+			pl.add(tf1);
+			pl.setCurrent(1);
+			assertEquals("Wrong current AudioFile", tf1, pl.getCurrentAudioFile());
+			
+			pl.remove(0); // Removing the first element invalidates current index
+						  // pointing at position 1. Now, list is too short.
+			assertEquals("Wrong current AudioFile", null, pl.getCurrentAudioFile());
+		}
+		
+		
+		
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+

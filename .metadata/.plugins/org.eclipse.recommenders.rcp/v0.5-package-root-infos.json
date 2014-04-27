@@ -1,28 +1,15 @@
 [
   {
-    "symbolicName": "mp3spi1.9.4",
+    "symbolicName": "tritonus_share",
     "version": {
       "major": -1,
       "minor": -1,
       "micro": -1,
       "qualifier": ""
     },
-    "jarFileFingerprint": "beccb1a3e766d0bd782a174d7cca0a47ba3b89d8",
+    "jarFileFingerprint": "2d30f1554a0a0cc8b580e18399b5d1121c7db383",
     "jarFileModificationDate": "2012-02-13T14:11:52+01:00",
-    "location": "/home/lars/workspace/GdP2/Praktikum/MediaPlayer_GdP2_VA07/lib/mp3spi1.9.4.jar",
-    "javaRuntime": false
-  },
-  {
-    "symbolicName": "junit",
-    "version": {
-      "major": -1,
-      "minor": -1,
-      "micro": -1,
-      "qualifier": ""
-    },
-    "jarFileFingerprint": "d066505750a09d6cc5ea8e78d4d26ab6cbf96a91",
-    "jarFileModificationDate": "2011-03-04T18:43:24+01:00",
-    "location": "/home/lars/Eclipse/Juno-SR1/eclipse/plugins/org.junit_3.8.2.v3_8_2_v20100427-1100/junit.jar",
+    "location": "/home/lars/workspace/GdP2/Praktikum/MediaPlayer_GdP2_VA08/lib/tritonus_share.jar",
     "javaRuntime": false
   },
   {
@@ -39,17 +26,17 @@
     "javaRuntime": false
   },
   {
-    "symbolicName": "jre",
+    "symbolicName": "jorbis-0.0.15",
     "version": {
-      "major": 1,
-      "minor": 0,
-      "micro": 0,
+      "major": -1,
+      "minor": -1,
+      "micro": -1,
       "qualifier": ""
     },
-    "jarFileFingerprint": "b4ff750ccf7b7a55e153a2bd7c6917f50dff945c",
-    "jarFileModificationDate": "2014-01-20T13:46:19+01:00",
-    "location": "/usr/lib/jvm/java-7-oracle/jre/lib/charsets.jar",
-    "javaRuntime": true
+    "jarFileFingerprint": "8010acdcf550f7c5d5ac64833fffa008e22c18f7",
+    "jarFileModificationDate": "2012-02-13T14:11:52+01:00",
+    "location": "/home/lars/workspace/GdP2/Praktikum/MediaPlayer_GdP2_VA08/lib/jorbis-0.0.15.jar",
+    "javaRuntime": false
   },
   {
     "symbolicName": "junit",
@@ -91,17 +78,17 @@
     "javaRuntime": false
   },
   {
-    "symbolicName": "jre",
+    "symbolicName": "jl1.0",
     "version": {
-      "major": 1,
-      "minor": 0,
-      "micro": 0,
+      "major": -1,
+      "minor": -1,
+      "micro": -1,
       "qualifier": ""
     },
-    "jarFileFingerprint": "41c6eef0644c6286fe527ef5efd0d61ce867a278",
-    "jarFileModificationDate": "2014-01-20T13:46:20+01:00",
-    "location": "/usr/lib/jvm/java-7-oracle/jre/lib/rt.jar",
-    "javaRuntime": true
+    "jarFileFingerprint": "2020d545657508bd82beab00359dcc50996b875e",
+    "jarFileModificationDate": "2012-02-13T14:11:52+01:00",
+    "location": "/home/lars/workspace/GdP2/Praktikum/MediaPlayer_GdP2_VA08/lib/jl1.0.jar",
+    "javaRuntime": false
   },
   {
     "symbolicName": "jre",
@@ -124,9 +111,9 @@
       "micro": 0,
       "qualifier": ""
     },
-    "jarFileFingerprint": "8c6ce34cd8476b884b6850a24c59c3e7000e67fa",
+    "jarFileFingerprint": "1826204b0e05aef412b595321866f7d190e0498d",
     "jarFileModificationDate": "2014-01-20T13:46:19+01:00",
-    "location": "/usr/lib/jvm/java-7-oracle/jre/lib/ext/dnsns.jar",
+    "location": "/usr/lib/jvm/java-7-oracle/jre/lib/ext/sunjce_provider.jar",
     "javaRuntime": true
   },
   {
@@ -137,9 +124,139 @@
       "micro": 0,
       "qualifier": ""
     },
-    "jarFileFingerprint": "1826204b0e05aef412b595321866f7d190e0498d",
+    "jarFileFingerprint": "77e8c2955804f363cd4dbe750c84af21605f3c1e",
     "jarFileModificationDate": "2014-01-20T13:46:19+01:00",
-    "location": "/usr/lib/jvm/java-7-oracle/jre/lib/ext/sunjce_provider.jar",
+    "location": "/usr/lib/jvm/java-7-oracle/jre/lib/ext/localedata.jar",
+    "javaRuntime": true
+  },
+  {
+    "symbolicName": "mp3spi1.9.4",
+    "version": {
+      "major": -1,
+      "minor": -1,
+      "micro": -1,
+      "qualifier": ""
+    },
+    "jarFileFingerprint": "beccb1a3e766d0bd782a174d7cca0a47ba3b89d8",
+    "jarFileModificationDate": "2012-02-13T14:11:52+01:00",
+    "location": "/home/lars/workspace/GdP2/Praktikum/MediaPlayer_GdP2_VA08/lib/mp3spi1.9.4.jar",
+    "javaRuntime": false
+  },
+  {
+    "symbolicName": "vorbisspi1.0.2",
+    "version": {
+      "major": -1,
+      "minor": -1,
+      "micro": -1,
+      "qualifier": ""
+    },
+    "jarFileFingerprint": "69800ea7dd35891e00ee02d6989a526dd097b1d8",
+    "jarFileModificationDate": "2012-02-13T14:11:52+01:00",
+    "location": "/home/lars/workspace/GdP2/Praktikum/MediaPlayer_GdP2_VA07/lib/vorbisspi1.0.2.jar",
+    "javaRuntime": false
+  },
+  {
+    "symbolicName": "vorbisspi1.0.2",
+    "version": {
+      "major": -1,
+      "minor": -1,
+      "micro": -1,
+      "qualifier": ""
+    },
+    "jarFileFingerprint": "69800ea7dd35891e00ee02d6989a526dd097b1d8",
+    "jarFileModificationDate": "2012-02-13T14:11:52+01:00",
+    "location": "/home/lars/workspace/GdP2/Praktikum/MediaPlayer_GdP2_VA08/lib/vorbisspi1.0.2.jar",
+    "javaRuntime": false
+  },
+  {
+    "symbolicName": "jre",
+    "version": {
+      "major": 1,
+      "minor": 0,
+      "micro": 0,
+      "qualifier": ""
+    },
+    "jarFileFingerprint": "5e51ce82a095b4a23291b1cd35e6f1488efc5776",
+    "jarFileModificationDate": "2014-01-20T13:46:19+01:00",
+    "location": "/usr/lib/jvm/java-7-oracle/jre/lib/ext/sunpkcs11.jar",
+    "javaRuntime": true
+  },
+  {
+    "symbolicName": "jogg-0.0.7",
+    "version": {
+      "major": -1,
+      "minor": -1,
+      "micro": -1,
+      "qualifier": ""
+    },
+    "jarFileFingerprint": "7b8eff12a2e93fea919c3f9494d5ccad9e193c8d",
+    "jarFileModificationDate": "2012-02-13T14:11:52+01:00",
+    "location": "/home/lars/workspace/GdP2/Praktikum/MediaPlayer_GdP2_VA07/lib/jogg-0.0.7.jar",
+    "javaRuntime": false
+  },
+  {
+    "symbolicName": "junit",
+    "version": {
+      "major": -1,
+      "minor": -1,
+      "micro": -1,
+      "qualifier": ""
+    },
+    "jarFileFingerprint": "d066505750a09d6cc5ea8e78d4d26ab6cbf96a91",
+    "jarFileModificationDate": "2011-03-04T18:43:24+01:00",
+    "location": "/home/lars/Eclipse/Juno-SR1/eclipse/plugins/org.junit_3.8.2.v3_8_2_v20100427-1100/junit.jar",
+    "javaRuntime": false
+  },
+  {
+    "symbolicName": "mp3spi1.9.4",
+    "version": {
+      "major": -1,
+      "minor": -1,
+      "micro": -1,
+      "qualifier": ""
+    },
+    "jarFileFingerprint": "beccb1a3e766d0bd782a174d7cca0a47ba3b89d8",
+    "jarFileModificationDate": "2012-02-13T14:11:52+01:00",
+    "location": "/home/lars/workspace/GdP2/Praktikum/MediaPlayer_GdP2_VA07/lib/mp3spi1.9.4.jar",
+    "javaRuntime": false
+  },
+  {
+    "symbolicName": "jre",
+    "version": {
+      "major": 1,
+      "minor": 0,
+      "micro": 0,
+      "qualifier": ""
+    },
+    "jarFileFingerprint": "b4ff750ccf7b7a55e153a2bd7c6917f50dff945c",
+    "jarFileModificationDate": "2014-01-20T13:46:19+01:00",
+    "location": "/usr/lib/jvm/java-7-oracle/jre/lib/charsets.jar",
+    "javaRuntime": true
+  },
+  {
+    "symbolicName": "jre",
+    "version": {
+      "major": 1,
+      "minor": 0,
+      "micro": 0,
+      "qualifier": ""
+    },
+    "jarFileFingerprint": "41c6eef0644c6286fe527ef5efd0d61ce867a278",
+    "jarFileModificationDate": "2014-01-20T13:46:20+01:00",
+    "location": "/usr/lib/jvm/java-7-oracle/jre/lib/rt.jar",
+    "javaRuntime": true
+  },
+  {
+    "symbolicName": "jre",
+    "version": {
+      "major": 1,
+      "minor": 0,
+      "micro": 0,
+      "qualifier": ""
+    },
+    "jarFileFingerprint": "8c6ce34cd8476b884b6850a24c59c3e7000e67fa",
+    "jarFileModificationDate": "2014-01-20T13:46:19+01:00",
+    "location": "/usr/lib/jvm/java-7-oracle/jre/lib/ext/dnsns.jar",
     "javaRuntime": true
   },
   {
@@ -182,6 +299,19 @@
     "javaRuntime": false
   },
   {
+    "symbolicName": "jogg-0.0.7",
+    "version": {
+      "major": -1,
+      "minor": -1,
+      "micro": -1,
+      "qualifier": ""
+    },
+    "jarFileFingerprint": "7b8eff12a2e93fea919c3f9494d5ccad9e193c8d",
+    "jarFileModificationDate": "2012-02-13T14:11:52+01:00",
+    "location": "/home/lars/workspace/GdP2/Praktikum/MediaPlayer_GdP2_VA08/lib/jogg-0.0.7.jar",
+    "javaRuntime": false
+  },
+  {
     "symbolicName": "jre",
     "version": {
       "major": 1,
@@ -215,19 +345,6 @@
       "micro": 0,
       "qualifier": ""
     },
-    "jarFileFingerprint": "77e8c2955804f363cd4dbe750c84af21605f3c1e",
-    "jarFileModificationDate": "2014-01-20T13:46:19+01:00",
-    "location": "/usr/lib/jvm/java-7-oracle/jre/lib/ext/localedata.jar",
-    "javaRuntime": true
-  },
-  {
-    "symbolicName": "jre",
-    "version": {
-      "major": 1,
-      "minor": 0,
-      "micro": 0,
-      "qualifier": ""
-    },
     "jarFileFingerprint": "1d6a39dc68525c02cdecbad7eb4c3b5300a53a87",
     "jarFileModificationDate": "2014-01-20T13:46:19+01:00",
     "location": "/usr/lib/jvm/java-7-oracle/jre/lib/ext/zipfs.jar",
@@ -247,42 +364,16 @@
     "javaRuntime": false
   },
   {
-    "symbolicName": "vorbisspi1.0.2",
+    "symbolicName": "studiplayer",
     "version": {
       "major": -1,
       "minor": -1,
       "micro": -1,
       "qualifier": ""
     },
-    "jarFileFingerprint": "69800ea7dd35891e00ee02d6989a526dd097b1d8",
+    "jarFileFingerprint": "640fac8e56490da5610683c8a2116e7d2e000564",
     "jarFileModificationDate": "2012-02-13T14:11:52+01:00",
-    "location": "/home/lars/workspace/GdP2/Praktikum/MediaPlayer_GdP2_VA07/lib/vorbisspi1.0.2.jar",
-    "javaRuntime": false
-  },
-  {
-    "symbolicName": "jre",
-    "version": {
-      "major": 1,
-      "minor": 0,
-      "micro": 0,
-      "qualifier": ""
-    },
-    "jarFileFingerprint": "5e51ce82a095b4a23291b1cd35e6f1488efc5776",
-    "jarFileModificationDate": "2014-01-20T13:46:19+01:00",
-    "location": "/usr/lib/jvm/java-7-oracle/jre/lib/ext/sunpkcs11.jar",
-    "javaRuntime": true
-  },
-  {
-    "symbolicName": "jogg-0.0.7",
-    "version": {
-      "major": -1,
-      "minor": -1,
-      "micro": -1,
-      "qualifier": ""
-    },
-    "jarFileFingerprint": "7b8eff12a2e93fea919c3f9494d5ccad9e193c8d",
-    "jarFileModificationDate": "2012-02-13T14:11:52+01:00",
-    "location": "/home/lars/workspace/GdP2/Praktikum/MediaPlayer_GdP2_VA07/lib/jogg-0.0.7.jar",
+    "location": "/home/lars/workspace/GdP2/Praktikum/MediaPlayer_GdP2_VA08/lib/studiplayer.jar",
     "javaRuntime": false
   }
 ]

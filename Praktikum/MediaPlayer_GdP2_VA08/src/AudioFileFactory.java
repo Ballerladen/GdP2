@@ -1,0 +1,19 @@
+public class AudioFileFactory {
+
+	public static AudioFile getInstance(String pathname) {
+
+		if (pathname.isEmpty() || !pathname.contains(".")) {
+			throw new RuntimeException("Unknow suffix for Audiofile: \""
+					+ pathname + "\"");
+		}
+
+		if (pathname.endsWith(".wav")) {
+			WavFile wf = new WavFile(pathname);
+
+		} else if (pathname.endsWith(".mp3") || pathname.endsWith(".ogg")) {
+			TaggedFile tf = new TaggedFile(pathname);
+		}
+
+		return null;
+	}
+}
