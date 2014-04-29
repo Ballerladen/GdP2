@@ -1,5 +1,9 @@
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.Collections;
 import java.util.LinkedList;
+import java.util.Scanner;
 
 @SuppressWarnings("serial")
 public class PlayList extends LinkedList<AudioFile> {
@@ -9,7 +13,14 @@ public class PlayList extends LinkedList<AudioFile> {
 
 	// constructor
 	public PlayList() {
+		super();
 		current = 0;
+	}
+
+	public PlayList(String pathname) {
+		this();
+		this.loadFromM3U(pathname);
+
 	}
 
 	// setters
@@ -50,9 +61,67 @@ public class PlayList extends LinkedList<AudioFile> {
 		}
 
 	}
-	
+
 	public void saveAsM3U(String pathname) {
-		
+		FileWriter writer = null;
+		String fname = pathname;
+		String linesep = System.getProperty("line.separator");
+
+		try {
+			writer = new FileWriter(fname);
+			writer.write("# My best songs" + linesep);
+			writer.write("# Das " + linesep);
+			writer.write("# hier " + linesep);
+			writer.write("# ist " + linesep);
+			writer.write("# eine " + linesep);
+			writer.write("# Uebung zum " + linesep);
+			writer.write("# Thema " + linesep);
+			writer.write("# FileWriter " + linesep);
+			writer.write(linesep);
+
+			for (int i = 0; i < this.size(); i++) {
+				writer.write(this.get(i).getPathname() + linesep);
+
+			}
+		} catch (IOException e) {
+			throw new RuntimeException("Unable to write to file " + fname + ":"
+					+ e.getMessage());
+		} finally {
+			try {
+				writer.close();
+			} catch (Exception e) {
+
+			}
+		}
+
 	}
 
+	public void loadFromM3U(String pathname) {
+		Scanner scanner = null;
+		String line;
+		this.clear();
+
+		try {
+			scanner = new Scanner(new File(pathname));
+			while (scanner.hasNextLine()) {
+				line = scanner.nextLine();
+				if (!line.trim().isEmpty() && !line.contains("#") && line.contains(".")) {
+
+					this.add(AudioFileFactory.getInstance(line));
+				}
+
+			}
+
+		} catch (IOException e) {
+			throw new RuntimeException(e);
+
+		} finally {
+			try {
+				scanner.close();
+
+			} catch (Exception e) {
+
+			}
+		}
+	}
 } // PlayList end

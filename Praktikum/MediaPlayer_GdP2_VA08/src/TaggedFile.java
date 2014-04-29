@@ -27,30 +27,29 @@ public class TaggedFile extends SampledFile {
 	// readAndStoreTags
 	public void readAndStoreTags(String pathname) {
 		Map<String, Object> tag_map = TagReader.readTags(pathname);
-		for (String key : tag_map.keySet()) {
 
-			// check key first
-			if (key == null)
-				continue;
+		if (tag_map == null)
+			throw new RuntimeException("Parsing map failed");
 
-			if (key.trim().isEmpty())
-				continue;
-
-			// all good, now set this shit
-			if (key.equals("title")) {
-				title = tag_map.get(key).toString().trim();
+		if (tag_map.containsKey("title")) {
+			if (!tag_map.get("title").toString().trim().isEmpty()) {
+				title = tag_map.get("title").toString().trim();
 			}
-
-			if (key.equals("author")) {
-				author = tag_map.get(key).toString().trim();
+		}
+		if (tag_map.containsKey("author")) {
+			if (!tag_map.get("author").toString().trim().isEmpty()) {
+				author = tag_map.get("author").toString().trim();
 			}
-
-			if (key.equals("album")) {
-				album = tag_map.get(key).toString().trim();
+		}
+		if (tag_map.containsKey("album")) {
+			if (!tag_map.get("album").toString().trim().isEmpty()) {
+				album = tag_map.get("album").toString().trim();
 			}
-
-			if (key.equals("duration")) {
-				duration = Long.parseLong(tag_map.get(key).toString().trim());
+		}
+		if (tag_map.containsKey("duration")) {
+			if (!tag_map.get("duration").toString().trim().isEmpty()) {
+				duration = Long.parseLong(tag_map.get("duration").toString()
+						.trim());
 			}
 		}
 
