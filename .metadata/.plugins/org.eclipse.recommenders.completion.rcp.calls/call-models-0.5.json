@@ -18,5 +18,10 @@
     "location": "/home/lars/workspace/GdP2/Praktikum/MediaPlayer_GdP2_VA08/src",
     "status": "UNRESOLVED",
     "error": "No class path info available for \u0027/home/lars/workspace/GdP2/Praktikum/MediaPlayer_GdP2_VA08/src\u0027. Skipped."
+  },
+  "/home/lars/workspace/GdP2/Praktikum/MediaPlayer_GdP2_VA09/src": {
+    "location": "/home/lars/workspace/GdP2/Praktikum/MediaPlayer_GdP2_VA09/src",
+    "status": "UNRESOLVED",
+    "error": "No class path info available for \u0027/home/lars/workspace/GdP2/Praktikum/MediaPlayer_GdP2_VA09/src\u0027. Skipped."
   }
 }
