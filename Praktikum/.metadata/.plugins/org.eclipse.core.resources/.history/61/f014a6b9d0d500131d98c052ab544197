@@ -1,0 +1,69 @@
+package studiplayer.ui;
+
+import java.awt.BorderLayout;
+
+import javax.swing.ImageIcon;
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.UIManager;
+
+import studiplayer.audio.PlayList;
+
+@SuppressWarnings("serial")
+public class Player extends JFrame {
+	
+	// constants
+	private static DEFAULT_TITLE = "Studiplayer.empty play list";
+	private static String DEFAULT_PLAYLIST = "playlists/DefaultPlayList.m3u";
+	
+	
+	// attribute
+	// Create a panel for the buttons
+	JPanel buttons = new JPanel();
+	// Create the buttons
+	JButton bplay = new JButton(new ImageIcon("icons/play.png"));
+	JButton bpause = new JButton(new ImageIcon("icons/pause.png"));
+	JButton bstop = new JButton(new ImageIcon("icons/stop.png"));
+	JButton bnext = new JButton(new ImageIcon("icons/next.png"));
+	JButton bpl_editor = new JButton(new ImageIcon("icons/pl_editor.png"));
+	
+	private PlayList playList;
+		
+	public Player(PlayList playList) {
+		// Initialize the main frame
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		try {
+			UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		this.playList = playList;
+		
+		// Create GUI components
+		// Labels
+		JLabel songDescription = new JLabel();
+		JLabel playTime = new JLabel();
+		// Add components to frame
+		this.add(songDescription, BorderLayout.NORTH);
+		this.add(playTime, BorderLayout.WEST);
+		this.add(buttons, BorderLayout.CENTER);
+
+		// Activate GUI
+		this.pack();
+		this.setVisible(true);
+	}
+
+	public static void main(String[] args) {
+		PlayList playList = null;
+		
+		if (args.length == 0){
+			playList = new PlayList(DEFAULT_PLAYLIST);
+		} else {
+			playList = new PlayList(args[0].toString());
+		}
+		new Player(playList);
+	}
+}

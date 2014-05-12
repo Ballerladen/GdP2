@@ -1,0 +1,259 @@
+package studiplayer.ui;
+
+import java.awt.BorderLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+import javax.swing.ImageIcon;
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.UIManager;
+
+import studiplayer.audio.AudioFile;
+import studiplayer.audio.NotPlayableException;
+import studiplayer.audio.PlayList;
+
+@SuppressWarnings("serial")
+public class Player extends JFrame implements ActionListener {
+
+	// attributes
+	private final String DEFAULT_TITLE = "Studiplayer empty play list";
+	public final static String DEFAULT_PLAYLIST = "playlists/DefaultPlayList.m3u";
+	private static String prefix = "Current Song: ";
+	private static String initial_time = "00:00";
+	private static String no_song = "no current song";
+	private static String no_time = "--:--";
+
+	private JButton bplay;
+	private JButton btogglepause;
+	private JButton bstop;
+	private JButton bnext;
+	private JButton bpleditor;
+
+	private JLabel songDescription = null;
+	private JLabel playTime = null;
+
+	private volatile boolean stopped;
+	private boolean editorVisible;
+
+	private PlayListEditor playListEditor;
+
+	private PlayList playList;
+
+	// PLAYER
+	public Player(PlayList playList) {
+
+		try {
+			UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
+		this.playList = playList;
+
+		// Create a panel for the buttons
+		JPanel buttons = new JPanel();
+
+		// GUI
+		songDescription = new JLabel();
+		playTime = new JLabel();
+
+		updateSongInfo();
+
+		// Create the buttons
+		bplay = new JButton(new ImageIcon("icons/play.png"));
+		bplay.setActionCommand("AC_PLAY");
+		bplay.addActionListener(this);
+		bplay.setEnabled(true);
+		buttons.add(bplay);
+
+		btogglepause = new JButton(new ImageIcon("icons/pause.png"));
+		btogglepause.setActionCommand("AC_PAUSE");
+		btogglepause.addActionListener(this);
+		btogglepause.setEnabled(false);
+		buttons.add(btogglepause);
+
+		bstop = new JButton(new ImageIcon("icons/stop.png"));
+		bstop.setActionCommand("AC_STOP");
+		bstop.addActionListener(this);
+		bstop.setEnabled(false);
+		buttons.add(bstop);
+
+		bnext = new JButton(new ImageIcon("icons/next.png"));
+		bnext.setActionCommand("AC_NEXT");
+		bnext.addActionListener(this);
+		bnext.setEnabled(true);
+		buttons.add(bnext);
+
+		bpleditor = new JButton(new ImageIcon("icons/pl_editor.png"));
+		bpleditor.setActionCommand("AC_PL_EDITOR");
+		bpleditor.addActionListener(this);
+		bpleditor.setEnabled(true);
+		buttons.add(bpleditor);
+
+		// Add components
+		this.add(songDescription, BorderLayout.NORTH);
+		this.add(playTime, BorderLayout.WEST);
+		this.add(buttons, BorderLayout.CENTER);
+
+		// Activate GUI
+		this.pack();
+		this.setVisible(true);
+
+		// Initialize playlisteditor
+		playListEditor = new PlayListEditor(this, this.playList);
+		editorVisible = false;
+
+	}
+
+	@Override
+	// Implement interface of ActionListener
+	public void actionPerformed(ActionEvent e) {
+		AudioFile af;
+		String cmd = e.getActionCommand();
+
+		if (cmd.equals("AC_PLAY")) {
+			af = playList.getCurrentAudioFile();
+			playCurrentSong();
+
+			bplay.setEnabled(false);
+			btogglepause.setEnabled(true);
+			bstop.setEnabled(true);
+			bnext.setEnabled(true);
+			bpleditor.setEnabled(true);
+
+		} else if (cmd.equals("AC_PAUSE")) {
+			af = playList.getCurrentAudioFile();
+			af.togglePause();
+
+			bplay.setEnabled(false);
+			btogglepause.setEnabled(true);
+			bstop.setEnabled(true);
+			bnext.setEnabled(true);
+			bpleditor.setEnabled(true);
+
+		} else if (cmd.equals("AC_STOP")) {
+			stopCurrentSong();
+
+			bplay.setEnabled(true);
+			btogglepause.setEnabled(false);
+			bstop.setEnabled(false);
+			bnext.setEnabled(true);
+			bpleditor.setEnabled(true);
+
+			updateSongInfo();
+
+		} else if (cmd.equals("AC_NEXT")) {
+			if (!stopped) {
+				// We are playing
+				// Stop playing the last Song
+				stopCurrentSong();
+			}
+
+			// now, we are stopped and not playing
+			// Move on to the next song in the playlist
+			playList.changeCurrent();
+			// Play the next Song
+			playCurrentSong();
+
+			bplay.setEnabled(false);
+			btogglepause.setEnabled(true);
+			bnext.setEnabled(true);
+			bstop.setEnabled(true);
+
+			updateSongInfo();
+
+		} else if (cmd.equals("AC_EDITOR")) {
+			if (editorVisible) {
+				editorVisible = false;
+			} else {
+				editorVisible = true;
+			}
+			playListEditor.setVisible(editorVisible);
+		}
+
+	}
+
+	private void updateSongInfo() {
+		if (this.playList.getCurrentAudioFile() == null) {
+			this.setTitle(DEFAULT_TITLE);
+			songDescription.setText(no_song);
+			playTime.setText(no_time);
+		} else {
+			this.setTitle(prefix
+					+ this.playList.getCurrentAudioFile().toString());
+			songDescription.setText(this.playList.getCurrentAudioFile()
+					.toString());
+			playTime.setText(initial_time);
+		}
+	}
+
+	private void playCurrentSong() {
+		updateSongInfo();
+
+		if (playList != null) {
+			stopped = false;
+			(new TimerThread()).start();
+			(new PlayerThread()).start();
+
+		}
+	}
+
+	private void stopCurrentSong() {
+		stopped = true;
+		playList.getCurrentAudioFile().stop();
+		playTime.setText(initial_time);
+	}
+
+	public void setEnabled(boolean b) {
+
+	}
+
+	private class TimerThread extends Thread {
+		public void run() {
+			while (!stopped && playList != null) {
+				playTime.setText(playList.getCurrentAudioFile()
+						.getFormattedPosition());
+
+				try {
+					sleep(100);
+				} catch (InterruptedException e) {
+					e.printStackTrace();
+				}
+			}
+		}
+	}
+
+	private class PlayerThread extends Thread {
+		public void run() {
+			while (!stopped && playList != null) {
+				try {
+					playList.getCurrentAudioFile().play();
+				} catch (NotPlayableException e) {
+					e.printStackTrace();
+				}
+				if (!stopped) {
+					playList.changeCurrent();
+					updateSongInfo();
+				}
+			}
+		}
+	}
+
+	// MAIN
+	public static void main(String[] args) {
+		PlayList playList = null;
+
+		if (args.length == 0) {
+			playList = new PlayList(DEFAULT_PLAYLIST);
+		} else {
+			playList = new PlayList(args[0].toString());
+		}
+		new Player(playList);
+	}
+
+}

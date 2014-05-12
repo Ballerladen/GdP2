@@ -1,0 +1,38 @@
+package studiplayer.ui;
+
+import javax.swing.ImageIcon;
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.UIManager;
+
+@SuppressWarnings("serial")
+public class Player extends JFrame {
+
+	// constructor
+	JPanel buttons = new JPanel();
+	JButton bplay = new JButton(new ImageIcon("icons/play.png"));
+	JButton bpause = new JButton(new ImageIcon("icons/pause.png"));
+	JButton bstop = new JButton(new ImageIcon("icons/stop.png"));
+	JButton bnext = new JButton(new ImageIcon("icons/next.png"));
+	JButton bpl_editor = new JButton(new ImageIcon("icons/pl_editor.png"));
+
+	public Player() {
+		// Initialize the main frame
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		try {
+			UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		// Create GUI components
+
+		// Activate GUI
+		this.pack();
+		this.setVisible(true);
+	}
+
+	public static void main(String[] args) {
+		new Player();
+	}
+}

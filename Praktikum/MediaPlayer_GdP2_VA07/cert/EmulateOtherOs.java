@@ -26,7 +26,7 @@ public class EmulateOtherOs {
 
     public static void listAllSystemProperties() {
         Properties p = System.getProperties();
-        Enumeration enuProp = p.propertyNames();
+        Enumeration<?> enuProp = p.propertyNames();
         while (enuProp.hasMoreElements()) {
             String propertyName = (String) enuProp.nextElement();
             String propertyValue = p.getProperty(propertyName);
